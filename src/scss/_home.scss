@@ -1,0 +1,97 @@
+
+$default-font: 'Roboto', sans-serif;
+$accent-font: 'Source Serif Pro', sans-serif;
+$accent-color: #000000;
+$foreground-color: #000000;
+$secondary-foreground-color: #ffffff;
+$background-color: #ffffff;
+
+.button {
+    display: inline-block;
+    height: auto;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1em;
+    text-transform: uppercase;
+    color: $foreground-color;
+    background: none;
+    margin: 20px 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+
+    &--border {
+        align-self: flex-end;
+        position: relative;
+        border: 3px solid $accent-color;
+        border-radius: 40px;
+        margin: 0;
+        padding: 19px 40px;
+        min-width: 185px;
+        font-size: .7rem;
+        font-weight: 700;
+        text-align: center;
+        z-index: 1;
+    }
+
+    &--fill {
+        background: $accent-color;
+        color: $secondary-foreground-color;
+
+        .loading::before {
+            border-color: transparent white white white;
+        }
+    }
+
+    &--fixed {
+        position: fixed;
+        right: 90px;
+        bottom: 35px;
+        height: 58px;
+        z-index: 11;
+    }
+
+    &--fixed-mobile {
+        background: #8b8b8b;
+        border-color: #8b8b8b;
+        text-transform: none;
+        box-shadow: 0 10px 15px 0 rgba(0, 0, 0, .15);
+
+        &:hover {
+            color: #8b8b8b !important;
+
+            .loading::before {
+                border-color: transparent #8b8b8b #8b8b8b #8b8b8b !important;
+            }
+        }
+    }
+
+    &--fixed-left {
+        left: 90px;
+        right: auto;
+        background: $background-color;
+        color: $foreground-color;
+        text-transform: none;
+        border: 1px solid black;
+    }
+
+    &--center {
+        margin: auto;
+    }
+
+    &--previous {
+        bottom: 54px;
+        color: $foreground-color;
+    }
+
+    &--next {
+        position: fixed;
+        right: 90px;
+        bottom: 35px;
+        z-index: 11;
+    }
+
+    &--push-bottom {
+        margin-top: 17px;
+    }
+}
